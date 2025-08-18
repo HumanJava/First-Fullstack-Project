@@ -9,3 +9,6 @@ export const connectDB = async () => {
     process.exit(1); // process code 1 code indicates an error, 0 indicates success
   }
 };
+
+// dont tell anyone that the bimil is that you need to have an .env files and put MONGO_URI=mongodb+srv://therunningllama:<password>@cluster0.nxjwk40.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+// the bimil is vWBTq8f6kVSubWRK
