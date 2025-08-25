@@ -12,14 +12,13 @@ app.use(express.json()); // Middleware to parse JSON req.bodies
 
 app.get("/api/products", async (req, res) => {
     try {
-        const products = await Products.find({});
+        const products = await Product.find({});
         res.status(200).json({ success: true, data: products });
     } catch (error) {
-        console.error(`❌ Error in Get all products : ${error.message}`);
+        console.error(`❌ Error in Fetch products : ${error.message}`);
         res.status(500).json({ success: false, message: error.message });
     }
 });
-
 
 
 app.post("/api/products", async (req, res) => {
