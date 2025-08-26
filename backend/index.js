@@ -7,6 +7,7 @@ import productRoutes from './routes/product.js';
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 8000;
 
 app.use(express.json()); // Middleware to parse JSON req.bodies
 
@@ -14,8 +15,8 @@ app.use("/api/products", productRoutes)
 
 console.log(process.env.MONGO_URI);
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
     connectDB();
-    console.log('Server is running on http://localhost:8000');
+    console.log('Server is running on http://localhost:' + PORT);
 });
 
