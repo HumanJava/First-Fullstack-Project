@@ -2,17 +2,21 @@ import { Container, Flex, HStack, Text, Button } from "@chakra-ui/react";
 import { FaPlusMinus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useColorMode } from "@chakra-ui/react";
-import { FaLightbulb } from "react-icons/fa";
-import { FaRegLightbulb } from "react-icons/fa6";
-import { AnimatePresence, motion } from "framer-motion";
+import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
+
+
+
 
 
 
 
 const Navbar = () => {
+
   const { colorMode, toggleColorMode } = useColorMode();
+
+
   return (
-    <Container maxW={"1140px"} px={4}>
+    <Container maxW={"1140px"} px={4} >
       <Flex
         h={16}
         alignItems={"center"}
@@ -38,18 +42,9 @@ const Navbar = () => {
             New
           </Button>
           <Button onClick={toggleColorMode}>
-            {/* <AnimatePresence mode="wait" initial={false}>
-              <motion.span
-                key={colorMode}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 5 }}
-                style={{ display: "inline-flex", alignItems: "center" }} */}
-              >
-                {colorMode === "light" ? <FaRegLightbulb /> : <FaLightbulb />}
-              {/* </motion.span>
-            </AnimatePresence> */}
+                      
+                {colorMode === "light" ?  <FaRegLightbulb />  : <FaLightbulb /> }
+
           </Button>
         </HStack>
       </Flex>
