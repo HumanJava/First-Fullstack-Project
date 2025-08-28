@@ -13,12 +13,13 @@ const CreatePage = () => {
   const { createProduct } = useProductStore()
 
   const handleAddProduct = async () => {
-    const {success, message} = await createProduct(newProduct);
-    console.log(newProduct);
+    const { success, message } = await createProduct(newProduct);
+    console.log("Success", success);
+    console.log("Message:", message);
   }
 
   return (
-    <Container maxW={"container.sm"}> 
+    <Container maxW={"container.sm"}>
       <VStack spacing={8}>
         <Heading as={"h1"} size="2xl" textAlign={"center"}>
           Create New Product
@@ -47,9 +48,9 @@ const CreatePage = () => {
                 onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })}
               />
               <Button
-              colorScheme={"blue"}
-              onClick = {handleAddProduct}
-              w="full">
+                colorScheme={"blue"}
+                onClick={handleAddProduct} w="full"
+              >
                 Add Product
               </Button>
             </VStack>

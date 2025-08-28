@@ -1,8 +1,8 @@
 import { Container, Flex, HStack, Text, Button } from "@chakra-ui/react";
-import { FaPlusMinus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useColorMode } from "@chakra-ui/react";
-import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
+import { FaLightbulb, FaRegLightbulb, } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 
 
 
@@ -38,12 +38,12 @@ const Navbar = () => {
         </Text>
 
         <HStack spacing={2} alignItems="center">
-          <Button as={Link} to="/create" leftIcon={<FaPlusMinus fontSize={20} />}>
+          <Button as={Link} to="/create" leftIcon={<FaPlus fontSize={20} />}>
             New
           </Button>
           <Button onClick={toggleColorMode}>
                       
-                {colorMode === "light" ?  <FaRegLightbulb />  : <FaLightbulb /> }
+                {colorMode === "light" ?  <FaRegLightbulb />  : <FaRegLightbulb /> }
 
           </Button>
         </HStack>

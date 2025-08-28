@@ -1,4 +1,3 @@
-
 import { create } from "zustand";
 
 export const useProductStore = create((set) => ({
@@ -6,17 +5,20 @@ export const useProductStore = create((set) => ({
     setProducts: (products) => set({ products }),
     createProduct: async (newProduct) => {
         if (!newProduct.name || !newProduct.price || !newProduct.image) {
-            return { succes: false, message: "Please fill in all the field" }
-
+            return { success: false, message: "Please enter all valid fields" }
         }
+
         const res = await fetch("/api/products", {
-            method: "POST"
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body.JSON.stringify(newProduct)
+            body: JSON.stringify(newProduct)
         })
+
         const data = await res.json();
         set((state) => ({ products: [...state.products, data.data] }))
+        return { success: true, message: "Success!" }
     }
-}));
+
+    }))
